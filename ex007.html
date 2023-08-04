@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        .head{
+            background-color: rgb(82, 82, 245);
+            color: aliceblue;
+            padding: 16px;
+            text-align: center;
+        }
+
+
+        form input{
+            font: normal 18pt Arial;
+            width: 100px;
+            background-color: rgb(255, 141, 141);
+            color: aliceblue;
+        }
+        #soma{
+            background-color: red;
+            color: aliceblue;
+
+        }
+        .sol{
+            background-color: rgb(76, 76, 233);
+            color: aliceblue;
+            text-align: center;
+        }
+
+
+        #res{
+            font-size: 50px;
+            font-weight: 50;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>Somando valores</h1>
+        <form>
+            <input type="number" name="txt1" id="txt1">
+            +
+            <input type="number" name="txt2" id="txt2">
+            <input type="button" value="somar" id="soma">
+        </form>
+    </div>
+    <hr>
+    <div class="sol">
+        <div id="res">
+            <p>Resposta</p>
+        </div>
+    </div>
+
+    <script>
+        
+        var c = window.document.getElementById('soma')
+
+        c.addEventListener('click', somar)
+
+        function somar(){
+            var tn1 = window.document.getElementById('txt1')
+            var tn2 = window.document.getElementById('txt2')
+            var res = window.document.querySelector ('#res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1+n2
+
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}<strong>`
+
+        }
+
+
+var base = window.prompt('Digite o valor da base em centímetros. ')
+base = parseFloat(base)
+var altura = window.prompt('Digite o valor da altura em centímetros. ')
+altura = parseFloat(altura)
+
+
+window.alert(`O resultado é: ${calculaArea()} centimetros²`)
+
+
+
+
+function calculaArea(){
+    var area = base * altura
+    return area
+}
+    </script>
+    
+</body>
+</html>
